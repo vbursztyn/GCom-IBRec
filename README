@@ -26,4 +26,4 @@ mvn exec:java -Dexec.mainClass="com.globo.recommender.ItemBasedRecommender" -Dex
 
 If you'd rather have recommendations for another item, other than what you see, feel free to edit the URL string in ItemBasedRecommender.class.
 
-(* NOTE that not every item shall have enough data for outputing recommendations.)
+(* NOTE that not every item shall have enough data for outputting recommendations.)
