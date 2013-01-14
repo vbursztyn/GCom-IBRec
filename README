@@ -1,0 +1,29 @@
+Item Based Recommender created over Globo.com's "Actions.log" file, by Victor S. Bursztyn [vbursztyn@gmail.com | vsb@poli.ufrj.br ].
+
+*** REQUIREMENTS:
+
+Make sure you have installed Hadoop, Mahout and Pig, and have all environment variables properly set. Successfully running Pig's and Mahout's first examples is highly recommendable, before attempting any of the further steps.
+
+*** USAGE:
+
+1. PRE-PROCESSING THE INPUT DATA:
+
+In order to pre-process the original "actions.log" file, use "structured-actions.pig", located inside "Pig-Script".
+
+Usage in local mode is quite simple:
+pig -x local structured-actions.pig
+
+Make sure "actions.log" is placed at the same folder.
+
+After you run it a new folder "structured-actions.csv" will be created, storing the output. Make sure "part-r-00000" is copied into "GloboCom-Recommender", renamed to "actions.csv".
+
+2. PROCESSING THE RECOMMENDER:
+
+Once the input data is all set, you may want to run the Item Based Recommender.
+
+Usage through Maven is simple:
+mvn exec:java -Dexec.mainClass="com.globo.recommender.ItemBasedRecommender" -Dexec.args="src"
+
+If you'd rather have recommendations for another item, other than what you see, feel free to edit the URL string in ItemBasedRecommender.class.
+
+(* NOTE that not every item shall have enough data for outputing recommendations.)
